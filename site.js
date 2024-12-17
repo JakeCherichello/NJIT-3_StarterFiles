@@ -22,83 +22,88 @@
 */
 
 const vue_app = Vue.createApp({
-      // This automatically imports your movies.json file and puts it into
-      //   the variable: movies
-      created() {
-        fetch("movies.json")
-          .then((response) => response.json())
-          .then((json) => {
-            this.movies = json;
-          });
-      },
-      data() {
-        return {
-          movies: [],
-          /* ADD ADDITIONAL VARIABLES FOR STEP 3 HERE */
-          title: "IMDB + YourName's Top 8 Movies",
-          owner: "Jake Cherichello",
-          github: "https://github.com/Gkilgore/NJIT-3_StarterFiles",
-        };
-      },
-      methods: {
-        /* ADD FUNCTIONS/METHODS FOR STEP 7 HERE */
-        getMonthText: function (dateArray) {
-          const [year, month, day] = dateArray;
-          let monthText = " ";
-          let suffix = " ";
-          switch (month) {
-            case 1:
-              monthText = "January";
-              break;
-            case 2:
-              monthText = "February";
-              break;
-            case 3:
-              monthText = "March";
-              break;
-            case 4:
-              monthText = "April";
-              break;
-            case 5:
-              monthText = "May";
-              break;
-            case 6:
-              monthText = "June";
-              break;
-            case 7:
-              monthText = "July";
-              break;
-            case 8:
-              monthText = "August";
-              break;
-            case 9:
-              monthText = "September";
-              break;
-            case 10:
-              monthText = "October";
-              break;
-            case 11:
-              monthText = "November";
-              break;
-              case 12:
-              monthText = "December";
-              break;
-            default:
-              monthText = "Invalid";
-          }
-          if (day == 1 || day == 21 || day == 31) {
-            suffix = "st";
-          } else if (day == 2 || day == 22) {
-            suffix = "nd";
-          } else if (day == 3 || day == 23) {
-            suffix = "rd";
-          } else {
-            suffix = "th";
-          }
-          return `${monthText} ${day}${suffix}, ${year}`;
-        },
-    
-      },
-    });
-    
-    vue_app.mount("#vue_app");
+  // This automatically imports your movies.json file and puts it into
+  //   the variable: movies
+  created() {
+    fetch("movies.json")
+      .then((response) => response.json())
+      .then((json) => {
+        this.movies = json;
+      });
+  },
+  data() {
+    return {
+      movies: [],
+      /* ADD ADDITIONAL VARIABLES FOR STEP 3 HERE */
+      title: "IMDB + YourName's Top 8 Movies",
+      owner: "Jake Cherichello",
+      github: "https://github.com/Gkilgore/NJIT-3_StarterFiles",
+    };
+  },
+  methods: {
+    /* ADD FUNCTIONS/METHODS FOR STEP 7 HERE */
+    getMonthText: function (dateArray) {
+      const [year, month, day] = dateArray;
+      let monthText = " ";
+      let suffix = " ";
+      switch (month) {
+        case 1:
+          monthText = "January";
+          break;
+        case 2:
+          monthText = "February";
+          break;
+        case 3:
+          monthText = "March";
+          break;
+        case 4:
+          monthText = "April";
+          break;
+        case 5:
+          monthText = "May";
+          break;
+        case 6:
+          monthText = "June";
+          break;
+        case 7:
+          monthText = "July";
+          break;
+        case 8:
+          monthText = "August";
+          break;
+        case 9:
+          monthText = "September";
+          break;
+        case 10:
+          monthText = "October";
+          break;
+        case 11:
+          monthText = "November";
+          break;
+          case 12:
+          monthText = "December";
+          break;
+        default:
+          monthText = "Invalid";
+      }
+      if (day == 1 || day == 21 || day == 31) {
+        suffix = "st";
+      } else if (day == 2 || day == 22) {
+        suffix = "nd";
+      } else if (day == 3 || day == 23) {
+        suffix = "rd";
+      } else {
+        suffix = "th";
+      }
+      return `${monthText} ${day}${suffix}, ${year}`;
+    },
+    posterClick: function() {
+      if (movies.posterindex > movies.posters.length - 1)
+           movies.posterindex = 0;
+      else 
+           movies.posterindex++;
+  },
+},
+});
+
+vue_app.mount("#vue_app");

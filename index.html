@@ -37,7 +37,7 @@
         <div class="row">
           <div class="col-md-6" v-for="(movie, index) in movies">
             <div class="thumbnail">
-              <img class="poster img-fluid" />
+              <img :src="movies[index].posters[movies[index].posterindex]" @click="posterClick()" class="poster img-fluid"/>
               <div class="imageInfo">{{ movies[index].posterindex }}</div>
 
               <p class="title">{{ movies[index].title }} ({{ movies[index].country }})</p>

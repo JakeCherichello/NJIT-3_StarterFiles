@@ -48,6 +48,11 @@ body {
 	padding-right: 5px;
 }
 
+
+.poster {
+    width: 500px;
+    height: auto;
+}
 /* This stylizes your Title and Rating Text */
 .title,
 .released {
@@ -77,6 +82,7 @@ body {
     position: absolute;
     top: 50px;
     right: 25px;
+    border-radius: 50%;
 }
 
 /* This contains your like and dislike buttons */
@@ -107,6 +113,7 @@ body {
     transition: 500ms;
 }
 
+
 /* This makes sure your Github Button is centered */
 .footer {
     text-align: center;
@@ -119,3 +126,23 @@ body {
 }
 
 /* ADD YOUR LIKE AND DISLIKE HOVER/MOUSEOVER CSS CODE HERE */
+
+.likes {
+    background-color: #008700;
+    color: white;
+}
+
+.likes:hover {
+    background-color: #9edd87;
+    color: #008700;
+}
+
+.dislikes {
+    background-color: #f65a5b;
+    color: white;
+}
+
+.dislikes:hover {
+    background-color: #fdd6d6;
+    color: #F65A5B;
+}

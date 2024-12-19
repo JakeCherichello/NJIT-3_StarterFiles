@@ -44,9 +44,12 @@
 						<div class="imageInfo">
 							Poster {{ movie.posterindex + 1 }} of {{ movie.posters.length }}
 						</div>
+
+
 						<p class="title">{{ movie.title }} ({{ movie.country }})</p>
 						<p class="score"><i class="bi bi-star"></i> {{ movie.iscore }}</p>
 						<p class="runtime">Runtime: {{ timeText(movie.runtime) }}</p>
+						
 						<p class="released">Released: {{ getMonthText(movie.released) }} | Rated: {{ movie.rating }}</p>
 						<p class="websites">Websites:
 							<a :href="movie.imdb" target="_blank">IMDB</a> |
